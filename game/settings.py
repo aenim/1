@@ -9,6 +9,7 @@ class Settings():
         self.bg_color = (255,255,255)
         self.screen = pygame.display.set_mode(self.screen_size)
         self.cell_size = 80
+        self.enemy_step_range = 80
 
     def draw_grid(self):
         for x in range(0, self.screen_width, 80):

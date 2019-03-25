@@ -1,9 +1,8 @@
 import pygame
 import sys
 from settings import Settings
-from player import Player, Gold, Hole, Enemy
+from objects import Player, Gold, Hole, Enemy
 import game_functions as gf
-from pygame.sprite import Group
 
 def run_game():
 
@@ -16,12 +15,16 @@ def run_game():
     bg_color = (ai_settings.bg_color)
     player = Player(screen)
     gold = Gold(screen)
+    gold_2 = Gold(screen)
     hole = Hole(screen)
+    hole_2 = Hole(screen)
     enemy = Enemy(screen)
+    enemy_2 = Enemy(screen)
+    enemy_3 = Enemy(screen)
     # запуск основного цикла игры
     while True:
-        gf.check_events(player)
-        gf.update_screen(ai_settings,screen,player, gold, hole, enemy)
+        gf.check_events(player, enemy, enemy_2, enemy_3)
+        gf.update_screen(ai_settings,screen,player, gold,gold_2, hole, hole_2, enemy, enemy_2, enemy_3)
         ai_settings.draw_grid()
 
         '''
